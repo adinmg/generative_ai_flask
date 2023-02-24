@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generación de Imágenes por AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+</head>
+<body>
+    <div class="container mt-3">
+        <h2 class="text-center mb-3">Generación de Imágenes por AI (Bria)</h2>
+        <form action="/" method="post">
+            <div class="d-flex">
+                <input type="text" class="form-control mb-3 mx-3 w-75" name="query">
+                <button class="btn btn-primary mx-3 w-25 h-75" type="submit">Generar</button>
+            </div>
+        </form>
+    
+        <div>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="medium">Medium: Photography</label>
+                    <select name="language" class="form-control">
+                        <option value="photo realistic">Photo realistic</option>
+                        <option value="fashion">Fashion</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="style">Style: Photo realistic</label>
+                    <select name="style" class="form-control">
+                        <option value="photo realistic">Photo realistic</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="retro">Retro</option>
+                        <option value="still life">Still life</option>
+                        <option value="travel">Travel</option>
+                        <option value="artistic">Artistic</option>
+                        <option value="3d render">3D render</option>
+                        <option value="realistic">Realistic</option>
+                        <option value="comic book">Comic book</option>
+                        <option value="minimalistic">Minimalistic</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="atmosphere">Atmosphere: Vivid</label>
+                    <select name="atmosphere" class="form-control">
+                        <option value="dramatic">dramatic</option>
+                        <option value="vivid">vivid</option>
+                        <option value="warm">warm</option>
+                        <option value="cool">cool</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="camera">Camera: Non</label>
+                    <select name="camera" class="form-control">
+                        <option value="">Non</option>
+                        <option value="portrait">Portrait</option>
+                        <option value="close up">Close up</option>
+                        <option value="aerial">Aerial</option>
+                        <option value="landscape">Landscape</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        
+        {% if img_url %}
+            <div >
+                <img src="{{ img_url }}" alt="01">
+            </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>
